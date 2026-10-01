@@ -4,16 +4,28 @@ Bài giảng tương tác dạng slide cho buổi học đầu tiên của khoá
 
 Toàn bộ là HTML, CSS và JavaScript thuần. Không cần cài đặt, không cần build, không phụ thuộc thư viện ngoài.
 
-## Mở bài giảng
+## Chạy trên localhost
 
-Cách nhanh nhất: mở thẳng `index.html` bằng trình duyệt.
+Nên chạy qua localhost thay vì mở thẳng file, vì trình duyệt chỉ cho phép dùng micro trên `localhost` hoặc `https`. Mở bằng `file://` thì nghe mẫu vẫn tốt nhưng nút ghi âm sẽ bị chặn.
 
-Nếu muốn dùng đầy đủ tính năng ghi âm, hãy chạy qua một server cục bộ (micro chỉ hoạt động trên `localhost` hoặc `https`):
+Cách nhanh nhất, chạy trong thư mục dự án:
 
 ```bash
-npx http-server -p 8080 .
-# rồi mở http://localhost:8080
+./serve.sh
 ```
+
+Script tự tìm python hoặc node, mở trình duyệt ở `http://localhost:8080`. Muốn đổi cổng thì thêm số vào sau, ví dụ `./serve.sh 3000`. Dừng bằng `Ctrl+C`.
+
+Nếu thích tự gõ lệnh:
+
+```bash
+python3 -m http.server 8080      # có sẵn trên macOS và Linux
+npx --yes http-server -p 8080 .  # nếu máy có Node
+```
+
+Trên Windows, mở PowerShell trong thư mục dự án và chạy `python -m http.server 8080`, hoặc dùng tiện ích Live Server của VS Code (chuột phải vào `index.html` rồi chọn Open with Live Server).
+
+Rồi mở `http://localhost:8080`. Lần đầu bấm ghi âm, trình duyệt sẽ hỏi quyền micro, chọn Cho phép.
 
 Đưa lên GitHub Pages: vào Settings → Pages, chọn nhánh chứa mã nguồn và thư mục gốc `/`. Trang sẽ chạy ngay vì không cần bước build nào.
 
@@ -64,6 +76,7 @@ Thêm từ hoặc đổi đoạn văn chỉ cần sửa file này, không phải
 ## Tập tin
 
 ```
+serve.sh                chạy bài giảng trên localhost
 index.html              khung trang, thanh công cụ, mục lục
 assets/css/style.css    toàn bộ giao diện, nền sáng và tối
 assets/js/data.js       nội dung bài học
