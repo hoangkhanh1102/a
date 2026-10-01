@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rundown Bài 1: Âm cuối</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+<style>
+  :root {
+    --ink: #15181f; --ink-2: #4b5363; --ink-3: #828b9c;
+    --line: #d9dee8; --soft: #f3f5fa; --mark: #4338ca;
+    --t: #c2611f; --d: #6d28d9; --k: #0f766e; --s: #1d4ed8; --z: #be1457;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 26px 20px 60px;
+    background: #eef1f7; color: var(--ink);
+    font-family: ui-sans-serif, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 14px; line-height: 1.5;
+  }
+  .page {
+    max-width: 920px; margin: 0 auto; background: #fff;
+    padding: 30px 34px 36px; border-radius: 14px;
+    box-shadow: 0 10px 34px rgba(20, 26, 42, .1);
+  }
+  header { border-bottom: 3px solid var(--ink); padding-bottom: 12px; margin-bottom: 18px; }
+  h1 { font-size: 24px; margin: 0 0 4px; letter-spacing: -.01em; }
+  .sub { color: var(--ink-2); font-size: 13px; }
+  h2 {
+    font-size: 13px; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--mark); margin: 24px 0 10px;
+    border-bottom: 1px solid var(--line); padding-bottom: 6px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); padding: 0 8px 7px 0; font-weight: 700; }
+  td { padding: 9px 8px 9px 0; border-top: 1px solid var(--line); vertical-align: top; }
+  tr.rest td { background: var(--soft); color: var(--ink-2); font-style: italic; }
+  .time { white-space: nowrap; font-weight: 800; width: 82px; font-variant-numeric: tabular-nums; }
+  .sl { white-space: nowrap; width: 76px; color: var(--ink-2); font-size: 12.5px; }
+  .what b { display: block; }
+  .what span { color: var(--ink-2); font-size: 13px; }
+  .box { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--soft); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  ul { margin: 6px 0 0; padding-left: 19px; }
+  li { margin-bottom: 5px; }
+  .cue { border-left: 3px solid var(--mark); padding-left: 12px; margin: 8px 0; color: var(--ink-2); font-style: italic; }
+  .chk { list-style: none; padding: 0; margin: 6px 0 0; }
+  .chk li { padding-left: 25px; position: relative; margin-bottom: 7px; }
+  .chk li::before {
+    content: ''; position: absolute; left: 0; top: 2px;
+    width: 15px; height: 15px; border: 1.5px solid var(--ink-3); border-radius: 4px;
+  }
+  .never { border-left: 3px solid var(--z); padding-left: 12px; }
+  .ipa { font-weight: 800; }
+  .ipa.t { color: var(--t); } .ipa.d { color: var(--d); } .ipa.k { color: var(--k); }
+  .ipa.s { color: var(--s); } .ipa.z { color: var(--z); }
+  .foot { margin-top: 26px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 12px; }
+  .print { position: fixed; right: 18px; bottom: 18px; padding: 11px 18px; border: 0; border-radius: 11px;
+    background: var(--mark); color: #fff; font-weight: 700; font-size: 14px; cursor: pointer;
+    box-shadow: 0 6px 20px rgba(67, 56, 202, .35); font-family: inherit; }
+
+  @media (max-width: 680px) { .cols { grid-template-columns: 1fr; } body { padding: 14px 10px 70px; } .page { padding: 20px 16px 24px; } }
+
+  @media print {
+    @page { size: A4; margin: 12mm; }
+    body { background: #fff; padding: 0; font-size: 9.6pt; line-height: 1.4; }
+    td { padding: 6px 7px 6px 0; }
+    h2 { margin: 13px 0 7px; font-size: 10.5pt; }
+    h1 { font-size: 18pt; }
+    .box { padding: 9px 12px; }
+    .cue { margin: 5px 0; }
+    .page { box-shadow: none; border-radius: 0; padding: 0; max-width: none; }
+    .print { display: none; }
+    h2 { margin-top: 15px; page-break-after: avoid; }
+    tr, .box { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>Bài 1: Âm cuối <span class="ipa t">/t/</span> <span class="ipa d">/d/</span> <span class="ipa k">/k/</span> <span class="ipa s">/s/</span> <span class="ipa z">/z/</span></h1>
+  <div class="sub">Speaking căn bản &middot; 120 phút &middot; bản tóm tắt cầm tay, chi tiết xem GIAO-AN-BAI-1.md</div>
+</header>
+
+<h2>Trước giờ</h2>
+<ul class="chk">
+  <li>Mở bài giảng ở slide 1, bật loa ngoài, bấm thử một từ ở slide 5</li>
+  <li>Chọn giọng có chữ Google hoặc UK, để tốc độ 0.80x</li>
+  <li>Nhắc học viên mang điện thoại, buổi này có phần ghi âm</li>
+  <li>Chuẩn bị giấy ghi lỗi cho phần chẩn đoán ở phút 0</li>
+  <li>Không có mạng thì mở file bai-giang-am-cuoi.html đã tải sẵn</li>
+</ul>
+
+<h2>Dòng thời gian</h2>
+<table>
+<thead><tr><th class="time">Phút</th><th class="sl">Slide</th><th>Việc cần làm</th></tr></thead>
+<tbody>
+<tr><td class="time">0 to 12</td><td class="sl">1, 2</td><td class="what">
+  <b>Chẩn đoán rồi mới mở bài</b>
+  <span>Viết câu lên bảng, ba học viên đọc, thầy chỉ ghi lỗi và không sửa. Giữ tờ giấy lại. Rồi slide 2, bấm book/books và work/worked.</span></td></tr>
+<tr><td class="time">12 to 22</td><td class="sl">3</td><td class="what">
+  <b>Bốn nguyên tắc, làm bằng tay</b>
+  <span>Gạch chéo "lai-kơ" trên bảng. Cả lớp đặt tay lên cổ họng, đọc bat, bad, price, prize. Gọi hai em kiểm tra.</span></td></tr>
+<tr><td class="time">22 to 40</td><td class="sl">4 to 7</td><td class="what">
+  <b>Ba âm bật, mỗi âm 5 phút</b>
+  <span>Quy trình: nghe, đồng thanh, hai cá nhân, sửa một lỗi. Gieo câu hỏi tại sao worked đọc /t/. Phút 35 nhảy tạm sang slide 14 chạy bốn cặp từ.</span></td></tr>
+<tr class="rest"><td class="time">40 to 45</td><td class="sl"></td><td>Nghỉ. Để nguyên slide 7 trên màn hình.</td></tr>
+<tr><td class="time">45 to 58</td><td class="sl">8, 9</td><td class="what">
+  <b>Hai âm xát</b>
+  <span>Cho cả lớp kéo ssssss rồi zzzzzz, mỗi âm 3 giây, tay trên cổ họng. Chốt: phần lớn số nhiều kết thúc bằng /z/ chứ không phải /s/.</span></td></tr>
+<tr><td class="time">58 to 72</td><td class="sl">10, 11</td><td class="what">
+  <b>Hai quy tắc, cho tự tìm trước</b>
+  <span>Viết ba cột stops / jobs / buses lên bảng, hỏi chia theo tiêu chí gì, thảo luận cặp 2 phút. Rồi mới mở slide. Trả lời câu hỏi về worked. Nhấn từ asked. Kiểm tra nhanh 8 từ.</span></td></tr>
+<tr><td class="time">72 to 90</td><td class="sl">12, 13, 14</td><td class="what">
+  <b>Ba trò chơi</b>
+  <span>12: chia hai đội, sai thì mất lượt. 13: gọi lên bấm trực tiếp. 14: thêm vòng học viên tự đọc cho lớp đoán.</span></td></tr>
+<tr><td class="time">90 to 112</td><td class="sl">15</td><td class="what">
+  <b>Đoạn văn, bốn bước</b>
+  <span>Nghe mẫu 3 phút. Đồng thanh từng câu 6 phút. Cặp đôi bắt lỗi cho nhau 6 phút, chỉ ghi chỗ rơi âm chứ không sửa. Ghi âm cá nhân và nghe lại 7 phút.</span></td></tr>
+<tr><td class="time">112 to 120</td><td class="sl">16</td><td class="what">
+  <b>Quay lại câu đầu buổi</b>
+  <span>Ba học viên lúc đầu đọc lại, cả lớp đếm âm cuối. Chốt sáu điều. Giao bài hai phút mỗi tối. Chỉ cách lưu bài giảng vào điện thoại.</span></td></tr>
+</tbody>
+</table>
+
+<h2>Câu nói chốt</h2>
+<div class="cue">Phút 10: "Vấn đề không phải từ vựng yếu. Các bạn biết thừa số nhiều phải thêm s. Vấn đề là cái s đó không đi ra khỏi miệng."</div>
+<div class="cue">Phút 20: "Tay có rung không. Rung là hữu thanh, không rung là vô thanh. Cả buổi chỉ dùng đúng một bài kiểm tra này."</div>
+<div class="cue">Phút 65: "Đuôi -s không có quy tắc riêng. Nó bắt chước âm đứng ngay trước nó."</div>
+<div class="cue">Phút 108: "Nghe bản ghi của chính mình, đếm xem bao nhiêu chỗ tô màu bị bỏ qua. Không cần nói ra, tự biết là đủ."</div>
+
+<h2>Sửa lỗi tại chỗ</h2>
+<table>
+<thead><tr><th style="width:30%">Lỗi</th><th>Cách sửa ngay</th></tr></thead>
+<tbody>
+<tr><td>Thêm "ơ" ở cuối</td><td>Dừng hẳn miệng sau âm cuối, như bị ngắt điện. Đếm một giây rồi mới thả.</td></tr>
+<tr><td>Nuốt hẳn âm cuối</td><td>Đọc chậm gấp đôi, cường điệu âm cuối, về tốc độ thường sau năm lần.</td></tr>
+<tr><td>/d/ thành /t/</td><td>Tay lên cổ họng. Kéo dài nguyên âm trước: baaad.</td></tr>
+<tr><td>Mọi đuôi -s thành /s/</td><td>Hỏi lại: âm trước nó có rung không.</td></tr>
+<tr><td>Mọi -ed thành /ɪd/</td><td>Chỉ sau /t/ và /d/ mới thành /ɪd/. Viết ba ví dụ lên bảng.</td></tr>
+<tr><td>Bật âm cuối quá mạnh</td><td>Chạm, không gồng. Nhẹ hơn mà rõ hơn.</td></tr>
+</tbody>
+</table>
+
+<h2>Khi lệch giờ</h2>
+<div class="cols">
+  <div class="box">
+    <b>Thiếu giờ thì cắt theo thứ tự</b>
+    <ul>
+      <li>Trò chơi 2 (slide 13), giao về nhà</li>
+      <li>Rút trò chơi 1 còn 4 phút</li>
+      <li>Rút bước đọc cặp đôi còn 3 phút</li>
+    </ul>
+  </div>
+  <div class="box never">
+    <b>Không bao giờ cắt</b>
+    <ul>
+      <li>Bài kiểm tra cổ họng (phút 12 to 22)</li>
+      <li>Hai quy tắc (phút 58 to 72)</li>
+      <li>Ghi âm cá nhân (phút 105 to 112)</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Dấu hiệu buổi học đạt</h2>
+<div class="box">
+  Không phải học viên phát âm chuẩn, hai tiếng không làm được điều đó. Là khi học viên nghe lại bản ghi của chính mình và <b>tự chỉ ra được</b> chỗ mình nuốt âm, không cần thầy nói. Quá nửa lớp làm được là đạt.
+</div>
+
+<div class="foot">Bấm nút in ở góc dưới để in ra giấy A4 hoặc lưu thành PDF.</div>
+
+</div>
+<button class="print" onclick="window.print()">🖨 In hoặc lưu PDF</button>
+</body>
+</html>

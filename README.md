@@ -29,6 +29,14 @@ Rồi mở `http://localhost:8080`. Lần đầu bấm ghi âm, trình duyệt s
 
 Đưa lên GitHub Pages: vào Settings → Pages, chọn nhánh chứa mã nguồn và thư mục gốc `/`. Trang sẽ chạy ngay vì không cần bước build nào.
 
+## Giáo án
+
+Thư mục `giao-an/` có sẵn kịch bản dạy cho buổi 120 phút:
+
+- `GIAO-AN-BAI-1.md`: giáo án đầy đủ, chia theo từng khối thời gian, kèm câu nói mẫu, lỗi học viên thường mắc và phương án khi lệch giờ
+- `rundown.html`: bản tóm tắt một trang để cầm trong lớp, bấm nút in là ra A4 hoặc PDF
+- `rundown.pdf`: bản đã in sẵn, tạo từ `rundown.html`
+
 ## Cấu trúc bài giảng (16 slide)
 
 | Slide | Nội dung |
