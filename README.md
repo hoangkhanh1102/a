@@ -55,6 +55,33 @@ Rồi mở `http://localhost:8080`. Lần đầu bấm ghi âm, trình duyệt s
 - Nút mặt trăng để đổi nền sáng hoặc tối
 - Địa chỉ trang có lưu số slide, ví dụ `index.html#12`, nên gửi link thẳng tới một slide được
 
+## Hai cách để học viên giữ bài giảng lại
+
+### 1. Một file HTML tải về máy
+
+`bai-giang-am-cuoi.html` là bản gộp toàn bộ bài giảng vào đúng một file. Học viên tải về, bấm đúp là mở, không cần mạng, không cần cài gì. Giữ nguyên mọi hiệu ứng, trò chơi và phần nghe mẫu.
+
+Hạn chế duy nhất: trình duyệt chặn micro trên `file://` nên nút ghi âm ở slide 15 sẽ tắt, và trang tự hiện lời giải thích. Phần còn lại chạy đủ.
+
+Tạo lại file này sau khi sửa nội dung:
+
+```bash
+node build-single.js
+```
+
+Nút tải về đã nằm sẵn ở slide cuối, nên học viên tự lấy được mà không cần thầy gửi file.
+
+### 2. Thêm vào màn hình chính điện thoại
+
+Bản chạy trên `https` (ví dụ GitHub Pages) là một **Progressive Web App**. Học viên mở link rồi:
+
+- iPhone: nút chia sẻ, chọn Thêm vào MH chính
+- Android: menu ba chấm, chọn Cài đặt ứng dụng
+
+Bài giảng nằm lại trong máy như một ứng dụng riêng, có icon, mở toàn màn hình, **chạy được cả khi không có mạng**, và phần ghi âm vẫn hoạt động vì vẫn tính là `https`.
+
+Service worker trong `sw.js` lưu sẵn trang và toàn bộ tài nguyên ngay lần mở đầu tiên. Khi thầy cập nhật bài giảng, đổi số phiên bản `am-cuoi-v1` trong `sw.js` để máy học viên tải bản mới.
+
 ## Âm thanh
 
 Trang dùng **Web Speech API** sẵn có của trình duyệt để đọc mẫu, nên không cần chuẩn bị file mp3 nào. Chất lượng giọng phụ thuộc vào trình duyệt và hệ điều hành; Chrome và Edge thường có giọng tự nhiên nhất. Nếu danh sách giọng trống, hãy thử trình duyệt khác.
@@ -77,6 +104,11 @@ Thêm từ hoặc đổi đoạn văn chỉ cần sửa file này, không phải
 
 ```
 serve.sh                chạy bài giảng trên localhost
+build-single.js         gộp tất cả thành một file tải về
+bai-giang-am-cuoi.html  bản một file cho học viên, tạo từ lệnh trên
+manifest.webmanifest    thông tin ứng dụng khi thêm vào màn hình chính
+sw.js                   lưu bài giảng để dùng khi không có mạng
+assets/icons/           icon ứng dụng
 index.html              khung trang, thanh công cụ, mục lục
 assets/css/style.css    toàn bộ giao diện, nền sáng và tối
 assets/js/data.js       nội dung bài học

@@ -197,11 +197,35 @@ function slideWrap() {
       return h('div.check', {}, h('div.check__n', { text: String(i + 1) }),
         h('div', {}, h('b', { text: it[0] }), h('div.muted', { text: it[1] })));
     })),
+    saveCard(),
     h('div.card', { style: { marginTop: '14px' } },
       h('h3', {}, '📝 Bài tập về nhà'),
       h('p', {}, 'Mỗi tối, chọn một đoạn ngắn khoảng năm câu từ bất kỳ nguồn nào bạn thích. Gạch chân mọi âm cuối thuộc năm âm đã học, đọc to và ghi âm. Nghe lại một lần, sửa những chỗ bị nuốt, rồi đọc lại.'),
       h('p.muted', { style: { margin: 0 } }, 'Hai phút mỗi ngày, trong hai tuần, sẽ đổi hẳn cách người khác nghe bạn nói.')
     )
+  );
+}
+
+/* ---------- The huong dan giu bai giang lai ---------- */
+function saveCard() {
+  const isFile = location.protocol === 'file:';
+  return h('div.card', { style: { marginTop: '14px' } },
+    h('h3', {}, '💾 Giữ bài giảng này lại'),
+    isFile
+      ? h('p', { style: { margin: 0 } }, 'Bạn đang dùng bản tải về. File này chứa trọn bài giảng, không cần mạng vẫn học được. Riêng phần ghi âm cần mở qua đường dẫn https.')
+      : [
+        h('p', {}, 'Có hai cách, chọn cách nào cũng được:'),
+        h('div', { style: { display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '14px' } },
+          h('a.btn', { href: 'bai-giang-am-cuoi.html', download: 'bai-giang-am-cuoi.html' }, '⬇️ Tải về máy'),
+          h('button.btn.btn--ghost', { type: 'button', onclick: function () { Deck.go(0); } }, '↺ Về đầu bài')
+        ),
+        h('div.check', {}, h('div.check__n', {}, '1'),
+          h('div', {}, h('b', {}, 'Tải về máy'),
+            h('div.muted', {}, 'Một file duy nhất, bấm đúp là mở được, không cần mạng. Giữ được hết hiệu ứng và phần nghe mẫu.'))),
+        h('div.check', {}, h('div.check__n', {}, '2'),
+          h('div', {}, h('b', {}, 'Thêm vào màn hình chính điện thoại'),
+            h('div.muted', {}, 'Trên iPhone: nút chia sẻ rồi chọn Thêm vào MH chính. Trên Android: menu ba chấm rồi chọn Cài đặt ứng dụng. Bài giảng nằm lại trong máy như một ứng dụng, mở được cả khi không có mạng, và ghi âm vẫn chạy.')))
+      ]
   );
 }
 
@@ -324,10 +348,16 @@ const Deck = (function () {
 })();
 
 /* ---------- Thanh cong cu ---------- */
+/* localStorage co the nem loi khi mo bang file:// hoac o che do an danh */
+const store = {
+  get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* bo qua */ } }
+};
+
 (function () {
   const root = document.documentElement;
   const themeBtn = document.getElementById('themeBtn');
-  const saved = localStorage.getItem('amcuoi-theme');
+  const saved = store.get('amcuoi-theme');
   if (saved) root.setAttribute('data-theme', saved);
   else root.removeAttribute('data-theme');
 
@@ -336,7 +366,7 @@ const Deck = (function () {
     const isDark = now === 'dark' || (!now && window.matchMedia('(prefers-color-scheme: dark)').matches);
     const nextTheme = isDark ? 'light' : 'dark';
     root.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('amcuoi-theme', nextTheme);
+    store.set('amcuoi-theme', nextTheme);
     themeBtn.textContent = nextTheme === 'dark' ? '☀️' : '🌙';
   });
 
@@ -365,4 +395,13 @@ const Deck = (function () {
   if (!Speech.supported()) {
     document.getElementById('ttsWarn').style.display = 'block';
   }
+})();
+
+/* ---------- Luu bai giang de dung khi khong co mang ---------- */
+(function () {
+  if (!('serviceWorker' in navigator)) return;
+  if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () { /* bo qua */ });
+  });
 })();

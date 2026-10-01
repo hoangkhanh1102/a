@@ -376,9 +376,12 @@ Games.passage = function () {
   const slot = h('div.audio-slot');
   const recMsg = h('p.muted');
 
-  if (!Recorder.supported()) {
+  if (location.protocol === 'file:') {
     recBtn.disabled = true;
-    recMsg.textContent = 'Trình duyệt này không hỗ trợ ghi âm. Hãy mở trang bằng Chrome hoặc Safari qua đường dẫn https.';
+    recMsg.textContent = 'Bạn đang mở bằng file trên máy nên trình duyệt chặn micro. Phần nghe mẫu vẫn dùng bình thường. Muốn ghi âm thì mở bài giảng qua đường dẫn https hoặc localhost.';
+  } else if (!Recorder.supported()) {
+    recBtn.disabled = true;
+    recMsg.textContent = 'Trình duyệt này không hỗ trợ ghi âm. Hãy thử Chrome, Edge hoặc Safari bản mới.';
   }
 
   recBtn.addEventListener('click', async function () {

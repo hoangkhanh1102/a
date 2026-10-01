@@ -205,6 +205,7 @@ p { margin: 0 0 12px; }
   padding: 11px 18px; border-radius: 13px; border: 1px solid transparent;
   font-weight: 700; font-size: 14.5px;
   background: var(--brand); color: var(--btn-ink);
+  text-decoration: none;
   box-shadow: var(--shadow-sm);
   transition: transform var(--t), filter var(--t), background var(--t);
 }
