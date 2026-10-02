@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Thẻ TikTok: IELTS Writing Task 2</title>
+<style>
+  :root{
+    --navy:#162а3c;
+    --navy:#16293c;
+    --navy-2:#0f1d2b;
+    --cream:#f7f4ee;
+    --paper:#fffdf9;
+    --ink:#1b2a38;
+    --muted:#5f6f7e;
+    --line:#e7e0d4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#333;font-family:'Be Vietnam Pro',sans-serif;-webkit-font-smoothing:antialiased}
+
+  .card{
+    position:relative;width:1080px;height:1920px;background:var(--cream);
+    overflow:hidden;margin:0 auto 40px;display:flex;flex-direction:column;
+  }
+
+  /* ---------- header ---------- */
+  .top{
+    position:relative;height:132px;background:var(--navy);flex:0 0 auto;
+    display:flex;align-items:center;padding:0 48px;overflow:hidden;
+  }
+  .top__brand{
+    color:#fff;font-size:26px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    display:flex;align-items:center;gap:18px;z-index:2;
+  }
+  .top__brand i{display:block;width:8px;height:8px;border-radius:50%;background:var(--ac);font-style:normal}
+  .top__circles{position:absolute;right:210px;top:-40px;z-index:1}
+  .top__circles span{position:absolute;border-radius:50%;display:block}
+  .c1{width:150px;height:150px;background:#2f6f6a;opacity:.85;left:0;top:10px}
+  .c2{width:120px;height:120px;background:#1d3a50;left:96px;top:46px}
+  .top__badge{
+    position:absolute;right:48px;top:50%;transform:translateY(-50%);z-index:3;
+    padding:16px 34px;border-radius:999px;color:#fff;font-size:24px;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;
+    background:linear-gradient(100deg,var(--ac),var(--ac2));
+    box-shadow:0 10px 26px rgba(0,0,0,.28);
+  }
+
+  /* ---------- body ---------- */
+  .wrap{flex:1 1 auto;padding:54px 48px 0;display:flex;flex-direction:column;gap:34px;min-height:0}
+
+  .panel{
+    position:relative;background:var(--paper);border-radius:26px;padding:52px 54px;
+    box-shadow:0 2px 0 rgba(27,42,56,.05);border:1px solid var(--line);
+  }
+  .panel--grow{flex:0 0 auto}
+
+  .corner{position:absolute;width:74px;height:74px;pointer-events:none}
+  .corner--tl{left:-1px;top:-1px;border-top:7px solid var(--ac);border-left:7px solid var(--ac);border-radius:26px 0 0 0}
+  .corner--br{right:-1px;bottom:-1px;border-bottom:7px solid #2f8d84;border-right:7px solid #2f8d84;border-radius:0 0 26px 0}
+
+  .chip{
+    display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:#fff;
+    padding:13px 26px;border-radius:999px;font-size:22px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;margin-bottom:30px;
+  }
+  .chip em{font-style:normal;font-size:20px}
+  .chip--ac{background:var(--ac)}
+
+  h1{font-family:'Lora',serif;font-size:62px;line-height:1.26;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+  h1.sm{font-size:52px}
+  .q{font-family:'Lora',serif;font-size:46px;line-height:1.4;color:var(--ink);font-weight:600}
+
+  .note{
+    margin-top:34px;background:#fbf7ee;border-left:8px solid var(--ac);border-radius:14px;
+    padding:30px 34px;
+  }
+  .note__t{font-size:21px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#9a7b3f;margin-bottom:18px}
+  .note p{font-size:32px;line-height:1.5;color:var(--ink);font-weight:500}
+
+  p.body{font-size:35px;line-height:1.62;color:var(--ink);font-weight:400}
+  p.body + p.body{margin-top:30px}
+  p.lead{font-size:38px;font-weight:600;line-height:1.5}
+  .muted{color:var(--muted)}
+
+  ul.steps{list-style:none;margin-top:32px;display:flex;flex-direction:column;gap:24px}
+  ul.steps li{display:flex;gap:22px;font-size:34px;line-height:1.5;color:var(--ink)}
+  ul.steps li b{
+    flex:0 0 auto;width:46px;height:46px;border-radius:14px;background:var(--ac);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;margin-top:6px;
+  }
+  ul.dots{list-style:none;margin-top:30px;display:flex;flex-direction:column;gap:20px}
+  ul.dots li{display:flex;gap:20px;font-size:34px;line-height:1.5;color:var(--ink)}
+  ul.dots li:before{content:"";flex:0 0 auto;width:14px;height:14px;margin-top:17px;background:var(--ac);transform:rotate(45deg);border-radius:3px}
+
+  .enq{font-family:'Lora',serif;font-style:italic;color:#23333f}
+  .card--hook .bars span:last-child{background:#5d7083}
+  mark{background:#ffe8a3;color:#3a2c08;padding:3px 10px;border-radius:9px;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  mark.g{background:#c8ecd9;color:#13402c}
+  mark.p{background:#f8d6dd;color:#4d1b25}
+  mark.b{background:#d4e4fb;color:#132d4d}
+  .en{font-family:'IBM Plex Mono',monospace;font-weight:600;letter-spacing:-.01em}
+
+  blockquote{
+    margin-top:32px;border-left:8px solid var(--ac);background:#fbf9f4;border-radius:0 16px 16px 0;
+    padding:30px 34px;font-family:'Lora',serif;font-size:35px;line-height:1.5;color:#22323f;font-style:italic;
+  }
+  blockquote.sm{font-size:31px}
+
+  /* dark vocabulary panel */
+  .dark{
+    background:var(--navy-2);border-radius:26px;padding:48px 52px;color:#fff;position:relative;overflow:hidden;
+  }
+  .dark:after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.04)}
+  .dark__t{font-size:25px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:30px;color:#ffd978}
+  .vrow{display:flex;flex-direction:column;gap:22px}
+  .vrow div{display:flex;flex-direction:column;gap:7px}
+  .vrow .k{font-family:'IBM Plex Mono',monospace;font-size:29px;font-weight:600;color:#ffb27a}
+  .vrow .k i{font-style:normal;color:#8fa4b5;font-size:22px;font-family:'Be Vietnam Pro',sans-serif;margin-left:12px}
+  .vrow .v{font-size:28px;color:#cdd9e3;line-height:1.4}
+
+  /* footer bar */
+  .foot{flex:0 0 auto;padding:40px 48px 46px;display:flex;align-items:center;justify-content:space-between}
+  .bars{display:flex;gap:12px}
+  .bars span{display:block;width:76px;height:9px;border-radius:999px}
+  .sig{font-size:24px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9aa7b2}
+
+  /* hook card */
+  .card--hook{background:var(--navy)}
+  .card--hook .wrap{justify-content:center;gap:0;padding:0 86px}
+  .hook__kicker{font-size:26px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:#ffb27a;margin-bottom:46px}
+  .hook__big{font-family:'Lora',serif;font-size:88px;line-height:1.2;color:#fff;font-weight:700}
+  .hook__big u{text-decoration:none;color:#ffd978}
+  .hook__sub{margin-top:50px;font-size:40px;line-height:1.5;color:#b9c7d3;font-weight:500}
+  .hook__rule{width:120px;height:9px;border-radius:999px;background:#ffb27a;margin:56px 0}
+  .card--hook .foot .sig{color:#6c7e8e}
+</style>
+</head>
+<body>
+<div id="deck"></div>
+
+<script>
+const BARS = ['#e0533d','#e9913c','#f2c94c','#2f8d84','#2b6cb0','#16293c'];
+const CARDS = [
+/* 1 */ {hook:1, ac:'#e0533d', ac2:'#b9372a', kicker:'IELTS Writing Task 2',
+  big:'Bài band 8 này không có <u>một từ nào</u> bạn phải tra từ điển.',
+  sub:'Vấn đề của bạn chưa bao giờ là từ vựng.'},
+
+/* 2 */ {ac:'#e0533d', ac2:'#b9372a', badge:'Thẻ 1 / 8', chip:'Đề bài',
+  title:'Đọc kỹ hai chữ cuối cùng',
+  html:`<div class="q">"The tendency of human beings to copy one another is shown in the popularity of fashion clothes and consumer goods. <mark class="en">To what extent do you agree?</mark>"</div>
+  <div class="note"><div class="note__t">Điểm mấu chốt</div>
+  <p><span class="en">To what extent</span> nghĩa là <b>"đến mức nào"</b>. Đề đang hỏi mức độ, không bắt bạn chọn trắng hoặc đen.</p></div>`},
+
+/* 3 */ {ac:'#e9913c', ac2:'#c26a1f', badge:'Thẻ 2 / 8', chip:'Lập trường',
+  title:'Chọn lập trường trước khi viết chữ nào',
+  html:`<p class="body">Bạn có ba lựa chọn an toàn:</p>
+  <ul class="steps">
+    <li><b>1</b><span>Đồng ý hoàn toàn</span></li>
+    <li><b>2</b><span>Không đồng ý</span></li>
+    <li><b>3</b><span>Đồng ý, nhưng đề mới nói được một phần</span></li>
+  </ul>
+  <p class="body" style="margin-top:34px">Bài mẫu chọn cách thứ ba:</p>
+  <blockquote>"I agree with this, <mark class="g en">although</mark> clothes and gadgets seem to me only the most visible example of something much broader."</blockquote>
+  <p class="body">Một câu. Đọc xong, giám khảo biết <b>chính xác</b> bạn đứng ở đâu.</p>`},
+
+/* 4 */ {ac:'#f2c94c', ac2:'#d19b1b', badge:'Thẻ 3 / 8', chip:'Mở bài',
+  title:'Mở bài chỉ cần 2 câu',
+  html:`<ul class="steps">
+    <li><b>1</b><span>Viết lại đề bằng lời của bạn.</span></li>
+    <li><b>2</b><span>Nói thẳng lập trường.</span></li>
+  </ul>
+  <blockquote>"<mark class="en">It is often said that</mark> the way fashions and popular products spread shows how strongly people imitate one another."</blockquote>
+  <p class="body" style="margin-top:34px">Bỏ hẳn kiểu <span class="enq muted">"In today's modern society, with the rapid development of..."</span></p>
+  <p class="body">Câu đó <b>không cho bạn điểm nào</b>, mà còn tốn 25 từ.</p>`},
+
+/* 5 */ {ac:'#2f8d84', ac2:'#1b5f58', badge:'Thẻ 4 / 8', chip:'Thân bài 1',
+  title:'Mỗi đoạn thân bài chỉ làm một việc',
+  html:`<p class="body lead">Đoạn 1 làm đúng một việc: <mark class="g">chứng minh đề đúng</mark>.</p>
+  <ul class="dots">
+    <li><span><b>Khẳng định.</b> <span class="enq">"The claim is clearly right as far as it goes."</span></span></li>
+    <li><span><b>Ví dụ cụ thể.</b> Giày thể thao, áo khoác, điện thoại, quán cà phê.</span></li>
+    <li><span><b>Vì sao.</b> Mặc giống bạn bè là cách nói "tôi thuộc về nhóm này".</span></li>
+    <li><span><b>Bằng chứng mạnh nhất.</b> Cả một ngành quảng cáo sống bằng giả định đó, và ngành đó cực kỳ lời. Vậy giả định đó đúng.</span></li>
+  </ul>`},
+
+/* 6 */ {ac:'#2b6cb0', ac2:'#1b4a7d', badge:'Thẻ 5 / 8', chip:'Phát triển ý',
+  title:'Phát triển ý bằng câu hỏi, không phải bằng cách thêm ý',
+  html:`<p class="body">Lỗi phổ biến nhất: viết 4 ý, mỗi ý một câu, rồi hết đoạn. Giám khảo ghi đúng một chữ: <mark class="p en">underdeveloped</mark>.</p>
+  <p class="body" style="margin-top:34px">Lấy <b>một ý thôi</b>, rồi tự hỏi:</p>
+  <ul class="steps">
+    <li><b>1</b><span>Tại sao chuyện đó xảy ra?</span></li>
+    <li><b>2</b><span>Làm sao tôi biết điều đó đúng?</span></li>
+    <li><b>3</b><span>Có ví dụ nào ai cũng thấy được không?</span></li>
+  </ul>
+  <div class="note"><div class="note__t">Nhớ giùm thầy</div><p>Ba câu hỏi đó chính là ba câu tiếp theo của đoạn.</p></div>`},
+
+/* 7 */ {ac:'#6b4c9a', ac2:'#4a3270', badge:'Thẻ 6 / 8', chip:'Thân bài 2',
+  title:'Thân bài 2 là chỗ 6.5 khác 8.0',
+  html:`<p class="body">Đoạn 2 không lặp lại đoạn 1. Nó nói điều <b>đề bài bỏ sót</b>.</p>
+  <blockquote class="sm">"<mark class="en">What the statement misses is</mark> how much further this goes."</blockquote>
+  <p class="body" style="margin-top:34px">Người ta đâu chỉ copy quần áo. Họ copy cách nói, món ăn, cách nuôi con, và cả quan điểm chính trị của người họ theo dõi trên mạng.</p>
+  <p class="body">Rồi lật thêm một lớp: <mark class="b">copy không phải điểm yếu</mark>. Trẻ con học nói bằng cách bắt chước. Nhân viên mới học việc bằng cách nhìn người đi trước.</p>`},
+
+/* 8 */ {ac:'#4a8c3f', ac2:'#2f6128', badge:'Thẻ 7 / 8', chip:'Từ vựng',
+  title:'Từ vựng: đừng cố',
+  html:`<p class="body">Mở lại bài band 8 và đếm thử:</p>
+  <p class="body" style="margin-top:22px"><mark class="en">shoes</mark> <mark class="en">coffee shops</mark> <mark class="en">trainers</mark> <mark class="en">neighbours</mark> <mark class="en">child</mark> <mark class="en">job</mark></p>
+  <p class="body" style="margin-top:34px">Không một từ nào phải tra từ điển.</p>
+  <div class="note"><div class="note__t">Lexical Resource thật sự chấm gì</div>
+  <p>Chấm bạn dùng <b>đúng</b> và <b>tự nhiên</b>, không chấm bạn dùng từ khó. Một từ hiếm đặt sai chỗ trừ nặng hơn mười từ quen đặt đúng chỗ.</p></div>`},
+
+/* 9 */ {ac:'#e0533d', ac2:'#b9372a', badge:'Thẻ 8 / 8', chip:'Kết bài',
+  title:'Kết bài: một đến hai câu là đủ',
+  html:`<p class="body">Nhắc lại lập trường, giữ nguyên sắc thái, <b>không thêm ý mới</b>.</p>
+  <blockquote class="sm">"In conclusion, I agree that fashion demonstrates our tendency to imitate, <mark class="g en">but</mark> I believe this tendency runs far deeper than shopping and is, <mark class="en">on the whole</mark>, something we depend on."</blockquote>
+  <p class="body" style="margin-top:34px">Để ý chữ <span class="en">but</span>. Lập trường ở kết bài giống hệt lập trường ở mở bài. Đó gọi là <mark class="b">coherence</mark>.</p>`},
+
+/* 10 */ {ac:'#2f8d84', ac2:'#1b5f58', badge:'Thẻ phụ', chip:'Mang đi dùng',
+  title:'Sentence frames cho dạng Agree or Disagree',
+  dark:[
+    ['It is often said that...','Người ta thường cho rằng...'],
+    ['The claim is right as far as it goes.','Nhận định này đúng, trong phạm vi của nó.'],
+    ['The reason is not hard to see.','Lý do thì không khó thấy.'],
+    ['The strongest evidence, though, is...','Nhưng bằng chứng mạnh nhất là...'],
+    ['What the statement misses is...','Điều đề bài bỏ sót là...'],
+    ['It is also worth saying that...','Cũng cần nói thêm rằng...'],
+    ['on the whole','nhìn chung']
+  ]}
+];
+
+const deck = document.getElementById('deck');
+CARDS.forEach(c => {
+  const el = document.createElement('section');
+  el.className = 'card' + (c.hook ? ' card--hook' : '');
+  el.style.setProperty('--ac', c.ac);
+  el.style.setProperty('--ac2', c.ac2 || c.ac);
+
+  const head = `
+    <div class="top">
+      <div class="top__circles"><span class="c1"></span><span class="c2"></span></div>
+      <div class="top__brand"><span>IELTS Writing</span><i></i><span>Task 2</span></div>
+      ${c.badge ? `<div class="top__badge">${c.badge}</div>` : ''}
+    </div>`;
+
+  const bars = `<div class="bars">${BARS.map(b=>`<span style="background:${b}"></span>`).join('')}</div>`;
+
+  if (c.hook) {
+    el.innerHTML = head + `
+      <div class="wrap">
+        <div class="hook__kicker">${c.kicker}</div>
+        <div class="hook__big">${c.big}</div>
+        <div class="hook__rule"></div>
+        <div class="hook__sub">${c.sub}</div>
+      </div>
+      <div class="foot">${bars}<div class="sig">Lưu lại để viết tối nay</div></div>`;
+  } else {
+    const dark = c.dark ? `
+      <div class="dark">
+        <div class="dark__t">Useful sentence frames</div>
+        <div class="vrow">${c.dark.map(([k,v])=>`<div><span class="k">${k}</span><span class="v">${v}</span></div>`).join('')}</div>
+      </div>` : '';
+    el.innerHTML = head + `
+      <div class="wrap">
+        <div class="panel">
+          <div class="corner corner--tl"></div>
+          <div class="chip chip--ac">${c.chip}</div>
+          <h1${c.title.length > 34 ? ' class="sm"' : ''}>${c.title}</h1>
+        </div>
+        <div class="panel panel--grow">
+          <div class="corner corner--br"></div>
+          ${c.html || ''}
+          ${dark}
+        </div>
+      </div>
+      <div class="foot">${bars}<div class="sig">IELTS Writing Task 2</div></div>`;
+  }
+  deck.appendChild(el);
+});
+</script>
+</body>
+</html>
