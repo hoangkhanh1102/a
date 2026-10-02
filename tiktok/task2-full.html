@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Thẻ TikTok: Writing Task 2 trọn bộ</title>
+<link rel="stylesheet" href="cards.css">
+</head>
+<body>
+<div id="deck"></div>
+<script>
+const BARS = ['#e0533d','#e9913c','#f2c94c','#2f8d84','#2b6cb0','#16293c'];
+
+const CARDS = [
+
+/* 1. HOOK */
+{kind:'hook', ac:'#e0533d', ac2:'#b9372a',
+ kicker:'IELTS Writing Task 2',
+ big:'Một bài <u>band 8</u> không có lấy một từ khó.',
+ sub:'Nguyên bài, từ vựng và cách chấm đều nằm trong 7 thẻ này. Lưu lại trước khi lướt tiếp.'},
+
+/* 2. ĐỀ + HƯỚNG TIẾP CẬN */
+{ac:'#e9913c', ac2:'#c26a1f', badge:'Thẻ 1 / 6', chip:'Đề bài',
+ title:'Đề bài và hướng tiếp cận',
+ html:`<div class="q">"The tendency of human beings to copy one another is shown in the popularity of fashion clothes and consumer goods. <mark class="en">To what extent do you agree?</mark>"</div>
+ <div class="split"><div class="split__t">Hướng tiếp cận trong 4 bước</div>
+ <ul class="steps">
+   <li><b>1</b><span><b>Đọc kỹ "to what extent".</b> Đề hỏi <b>mức độ</b>, không bắt chọn trắng hoặc đen.</span></li>
+   <li><b>2</b><span><b>Chốt lập trường.</b> Đồng ý, nhưng quần áo mới là phần dễ thấy nhất của một thứ rộng hơn.</span></li>
+   <li><b>3</b><span><b>Chia việc cho hai đoạn.</b> Đoạn 1 chứng minh đề đúng. Đoạn 2 nói điều đề bỏ sót.</span></li>
+   <li><b>4</b><span><b>Giữ bố cục 4 đoạn.</b> Mở bài 2 câu, hai thân bài, kết bài 2 câu.</span></li>
+ </ul></div>`},
+
+/* 3. CẢ BÀI WRITING */
+{ac:'#2f8d84', ac2:'#1b5f58', tight:1, badge:'Thẻ 2 / 6', chip:'Bài mẫu',
+ title:'Nguyên bài band 8',
+ html:`<div class="meta"><span>Band 8.0</span><span>290 từ</span><span class="hot">Agree or disagree</span></div>
+ <div class="essay">
+ <p><span class="pnum">1</span><mark>It is often said that</mark> the way fashions and popular products spread shows how strongly people imitate one another. I agree with this, <mark class="g">although</mark> clothes and gadgets seem to me only the most visible example of something much broader.</p>
+ <p><span class="pnum">2</span>The claim is clearly right <mark>as far as it goes</mark>. A particular style of trainer or coat appears on every street within a few months and has disappeared again a year later, and the same happens with phones, coffee shops and kitchen appliances. <mark class="b">The reason is not hard to see.</mark> Wearing what your friends wear is <mark>a way of showing that you belong</mark> with them, while dressing very differently <mark>attracts attention</mark> that most people would rather avoid. <mark class="b">The strongest evidence, though, is commercial.</mark> An entire advertising industry is <mark>built on the assumption that</mark> showing one person enjoying a product will persuade others to buy it, and that industry is extremely profitable, which suggests the assumption is correct.</p>
+ <p><span class="pnum">3</span><mark class="g">What the statement misses is</mark> how much further this goes. People copy the words and expressions they hear, the food they see others eating, the way their neighbours raise their children and, increasingly, the political opinions of those they follow online. These imitations <mark>shape a life</mark> far more than a pair of shoes does. <mark class="g">It is also worth saying that</mark> copying is not a weakness. It is how human beings learn almost everything: a child <mark>acquires language by imitation</mark>, and a new employee learns a job by watching someone who already knows it. A species that refused to copy would have to invent everything again in every generation.</p>
+ <p><span class="pnum">4</span>In conclusion, I agree that fashion demonstrates our tendency to imitate, but I believe this tendency <mark>runs far deeper than</mark> shopping and is, <mark>on the whole</mark>, something we depend on.</p>
+ </div>`},
+
+/* 4. TỪ VỰNG */
+{ac:'#6b4c9a', ac2:'#4a3270', tight:1, badge:'Thẻ 3 / 6', chip:'Từ vựng',
+ title:'Từ vựng rút ra từ bài',
+ bare:1,
+ vocab:[
+  ['It is often said that...','mở bài','Người ta thường cho rằng...'],
+  ['as far as it goes','thành ngữ','Đúng, trong phạm vi của nó'],
+  ['a way of showing that you belong','cụm','Một cách thể hiện mình thuộc về nhóm'],
+  ['attract attention','collocation','Thu hút sự chú ý'],
+  ['be built on the assumption that','cụm','Được xây trên giả định rằng'],
+  ['shape a life','collocation','Định hình một cuộc đời'],
+  ['acquire language by imitation','cụm','Học ngôn ngữ bằng cách bắt chước'],
+  ['run far deeper than','cụm','Sâu xa hơn nhiều so với'],
+  ['on the whole','liên kết','Nhìn chung'],
+  ['a tendency to do something','collocation','Xu hướng làm điều gì đó']
+ ],
+ note:'Không một từ nào phải tra từ điển. Lexical Resource chấm bạn dùng <b>đúng</b> và <b>tự nhiên</b>, không chấm bạn dùng từ khó.'},
+
+/* 5. KHAI TRIỂN Ý + TRÁNH LẠC ĐỀ */
+{ac:'#2b6cb0', ac2:'#1b4a7d', tight:1, badge:'Thẻ 4 / 6', chip:'Khai triển ý',
+ title:'Khai triển ý và cách không lạc đề',
+ html:`<p class="body lead">Đừng thêm ý. Hãy hỏi ý đang có <mark class="b">ba câu hỏi</mark> này.</p>
+ <ul class="steps">
+   <li><b>1</b><span><b>Tại sao chuyện đó xảy ra?</b> Vì mặc giống bạn bè là cách nói "tôi thuộc về nhóm này".</span></li>
+   <li><b>2</b><span><b>Làm sao tôi biết là đúng?</b> Cả ngành quảng cáo sống bằng giả định đó, và họ rất lời.</span></li>
+   <li><b>3</b><span><b>Ví dụ ai cũng thấy?</b> Một kiểu giày lên phố vài tháng rồi biến mất sau một năm.</span></li>
+ </ul>
+ <p class="body" style="margin-top:28px">Một ý, ba câu hỏi, ra một đoạn đủ dày. Bốn ý mỗi ý một câu thì giám khảo ghi <mark class="p en">underdeveloped</mark>.</p>
+ <div class="split"><div class="split__t">Ba cách tự chặn lạc đề</div>
+ <ul class="dots">
+   <li><span><b>Mỗi câu phải trả lời được:</b> câu này đang phục vụ lập trường nào của tôi? Không trả lời được thì xoá.</span></li>
+   <li><span><b>Ví dụ phải quay về từ khoá của đề:</b> copy, fashion clothes, consumer goods. Kể chuyện riêng mà không vòng lại là lạc.</span></li>
+   <li><span><b>Kết bài không mở ý mới.</b> Ý mới ở câu cuối là dấu hiệu rõ nhất của một bài đi lạc.</span></li>
+ </ul></div>`},
+
+/* 6. ĐÁNH GIÁ VÀ PHÂN TÍCH */
+{ac:'#4a8c3f', ac2:'#2f6128', badge:'Thẻ 5 / 6', chip:'Chấm bài',
+ title:'Bài này được điểm ở đâu',
+ html:`<div class="crit">
+  <div><span class="band">8.0</span><span><span class="t">Task Response</span><span class="d">Lập trường rõ ngay câu thứ hai và không đổi cho tới kết bài. Có nhượng bộ (đề đúng) rồi mở rộng (đề mới nói một phần), nên bài trả lời đúng chữ "to what extent".</span></span></div>
+  <div><span class="band">8.0</span><span><span class="t">Coherence &amp; Cohesion</span><span class="d">Mỗi đoạn một nhiệm vụ. Ý nối nhau bằng logic, không cần firstly, secondly, last but not least.</span></span></div>
+  <div><span class="band">8.0</span><span><span class="t">Lexical Resource</span><span class="d">Từ quen nhưng đặt chính xác: trainers, coffee shops, neighbours. Collocation tự nhiên như attract attention, shape a life.</span></span></div>
+  <div><span class="band">8.0</span><span><span class="t">Grammar</span><span class="d">Câu dài ngắn xen kẽ. Mệnh đề quan hệ và "while" dùng đúng chỗ, không gồng.</span></span></div>
+ </div>
+ <div class="note"><div class="note__t">Điều làm nên band 8 ở đây</div><p>Không phải từ hiếm, mà là <b>một lập trường rõ được giữ nguyên</b> và <b>mỗi đoạn làm đúng một việc</b>.</p></div>`},
+
+/* 7. OUTRO */
+{kind:'outro', ac:'#2f8d84', ac2:'#1b5f58',
+ kicker:'Thẻ 6 / 6',
+ big:'Tuần sau <u>một đề mới</u>, cũng đủ bộ như vầy.',
+ cta:[
+  'Lưu bài này lại, tối nay viết thử đoạn 1.',
+  'Comment "TASK 2" nếu muốn mình chữa bài của bạn.',
+  'Follow để không mất bộ đề tuần sau.'
+ ],
+ handle:'IELTS cùng thầy Khánh Hoàng'}
+];
+
+const deck = document.getElementById('deck');
+CARDS.forEach(c => {
+  const el = document.createElement('section');
+  el.className = 'card' + (c.kind === 'hook' || c.kind === 'outro' ? ' card--hook' : '') + (c.tight ? ' card--tight' : '');
+  el.style.setProperty('--ac', c.ac);
+  el.style.setProperty('--ac2', c.ac2 || c.ac);
+
+  const head = `
+    <div class="top">
+      <div class="top__circles"><span class="c1"></span><span class="c2"></span></div>
+      <div class="top__brand"><span>IELTS Writing</span><i></i><span>Task 2</span></div>
+      ${c.badge ? `<div class="top__badge">${c.badge}</div>` : ''}
+    </div>`;
+  const bars = `<div class="bars">${BARS.map(b=>`<span style="background:${b}"></span>`).join('')}</div>`;
+
+  if (c.kind === 'hook') {
+    el.innerHTML = head + `
+      <div class="wrap">
+        <div class="hook__kicker">${c.kicker}</div>
+        <div class="hook__big">${c.big}</div>
+        <div class="hook__rule"></div>
+        <div class="hook__sub">${c.sub}</div>
+      </div>
+      <div class="foot">${bars}<div class="sig">Cuộn tiếp</div></div>`;
+  } else if (c.kind === 'outro') {
+    el.innerHTML = head + `
+      <div class="wrap">
+        <div class="hook__kicker">${c.kicker}</div>
+        <div class="hook__big">${c.big}</div>
+        <div class="hook__rule"></div>
+        <ul class="cta">${c.cta.map((t,i)=>`<li><b>${i+1}</b><span>${t}</span></li>`).join('')}</ul>
+        <div><div class="handle">${c.handle}</div></div>
+      </div>
+      <div class="foot">${bars}<div class="sig">Follow for more</div></div>`;
+  } else {
+    const vocab = c.vocab ? `
+      <div class="dark">
+        <div class="dark__t">Useful vocabulary . Từ vựng nổi bật</div>
+        <div class="vrow">${c.vocab.map(([k,t,v])=>
+          `<div><span class="vk"><span class="k">${k}</span><span class="tag">${t}</span></span><span class="v">${v}</span></div>`
+        ).join('')}</div>
+      </div>
+      ${c.note ? `<div class="note" style="margin-top:34px"><div class="note__t">Nhớ giùm thầy</div><p>${c.note}</p></div>` : ''}` : '';
+    el.innerHTML = head + `
+      <div class="wrap">
+        <div class="panel">
+          <div class="corner corner--tl"></div>
+          <div class="chip chip--ac">${c.chip}</div>
+          <h1${c.title.length > 34 ? ' class="sm"' : ''}>${c.title}</h1>
+        </div>
+        <div class="panel panel--grow"${c.bare ? ' style="padding:34px 36px"' : ''}>
+          <div class="corner corner--br"></div>
+          ${c.html || ''}${vocab}
+        </div>
+      </div>
+      <div class="foot">${bars}<div class="sig">IELTS Writing Task 2</div></div>`;
+  }
+  deck.appendChild(el);
+});
+</script>
+</body>
+</html>
