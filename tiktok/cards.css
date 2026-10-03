@@ -203,3 +203,5 @@ ul.steps li span b,ul.dots li span b,.cta li span b{
   all:unset;font-weight:700;color:var(--ink);
 }
 .cta li span b{color:#fff}
+.crit .band{font-size:26px;letter-spacing:.06em}
+.crit .t,.crit .d{display:block}

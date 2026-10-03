@@ -6,7 +6,7 @@ of fashion clothes and consumer goods. To what extent do you agree?"
 
 ## HOOK (3 giây đầu, chữ to giữa màn hình)
 
-Bài band 8 này không có một từ nào bạn phải tra từ điển.
+Bài mẫu này không có một từ nào bạn phải tra từ điển.
 Vấn đề của bạn chưa bao giờ là từ vựng.
 
 ---
@@ -76,7 +76,7 @@ Ba câu hỏi đó chính là ba câu tiếp theo của đoạn.
 
 ---
 
-## THẺ 6 / 8 . THÂN BÀI 2 LÀ CHỖ 6.5 KHÁC 8.0
+## THẺ 6 / 8 . THÂN BÀI 2 TÁCH BÀI HAY KHỎI BÀI THƯỜNG
 
 Đoạn 2 không lặp lại đoạn 1. Nó nói điều đề bài bỏ sót.
 
@@ -93,7 +93,7 @@ người đi trước. Đó là cách loài người học gần như mọi th�
 
 ## THẺ 7 / 8 . TỪ VỰNG: ĐỪNG CỐ
 
-Mở lại bài band 8 ở trên và đếm thử.
+Mở lại bài mẫu ở trên và đếm thử.
 shoes. coffee shops. trainers. neighbours. child. job.
 
 Không có một từ nào phải tra từ điển mới hiểu.
@@ -143,4 +143,4 @@ acquires language by imitation . runs far deeper than . on the whole
 nằm ở chỗ chưa chọn xong lập trường đã viết.
 Lưu lại, tối nay viết thử một đoạn theo thẻ số 5 nhé.
 
-#ielts #ieltswriting #ieltstask2 #hocielts #ieltsvietnam #writingtask2 #band8
+#ielts #ieltswriting #ieltstask2 #hocielts #ieltsvietnam #writingtask2
