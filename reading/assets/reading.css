@@ -1,0 +1,394 @@
+/* ===========================================================
+   Chua de Cambridge Reading
+   Giao dien trang chua bai cho hoc vien
+   =========================================================== */
+
+:root {
+  --bg: #f6f7fb;
+  --bg-2: #ffffff;
+  --bg-soft: #eef1f8;
+  --ink: #141a2a;
+  --ink-2: #4a5568;
+  --ink-3: #8a93a6;
+  --line: #e2e6f0;
+  --brand: #4338ca;
+  --brand-soft: #eef0ff;
+  --ok: #15803d;
+  --ok-soft: #e7f6ec;
+  --no: #c2334d;
+  --no-soft: #fdecef;
+  --warn: #b45309;
+  --warn-soft: #fdf3e3;
+  --quote: #0d9488;
+  --quote-soft: #e4f6f4;
+  --mark: #fde68a;
+  --mark-ink: #4a3a05;
+  --shadow: 0 1px 2px rgba(20, 26, 42, .05), 0 12px 30px rgba(20, 26, 42, .07);
+  --shadow-sm: 0 1px 2px rgba(20, 26, 42, .06), 0 4px 12px rgba(20, 26, 42, .05);
+  --r: 18px;
+  --t: 140ms;
+  --btn-ink: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1017;
+    --bg-2: #161a24;
+    --bg-soft: #1d2230;
+    --ink: #eef1f8;
+    --ink-2: #b3bbcc;
+    --ink-3: #7d869b;
+    --line: #272d3c;
+    --brand: #a5b4fc;
+    --brand-soft: #1f2436;
+    --ok: #6ee7a8;
+    --ok-soft: #122a1e;
+    --no: #fca5b5;
+    --no-soft: #2d1620;
+    --warn: #fbbf24;
+    --warn-soft: #2a2110;
+    --quote: #2dd4bf;
+    --quote-soft: #10272a;
+    --mark: #6b5a16;
+    --mark-ink: #fdf3c7;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 34px rgba(0, 0, 0, .45);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35), 0 4px 14px rgba(0, 0, 0, .3);
+    --btn-ink: #10131c;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1017;
+  --bg-2: #161a24;
+  --bg-soft: #1d2230;
+  --ink: #eef1f8;
+  --ink-2: #b3bbcc;
+  --ink-3: #7d869b;
+  --line: #272d3c;
+  --brand: #a5b4fc;
+  --brand-soft: #1f2436;
+  --ok: #6ee7a8;
+  --ok-soft: #122a1e;
+  --no: #fca5b5;
+  --no-soft: #2d1620;
+  --warn: #fbbf24;
+  --warn-soft: #2a2110;
+  --quote: #2dd4bf;
+  --quote-soft: #10272a;
+  --mark: #6b5a16;
+  --mark-ink: #fdf3c7;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 34px rgba(0, 0, 0, .45);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .35), 0 4px 14px rgba(0, 0, 0, .3);
+  --btn-ink: #10131c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.68;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 16px 90px; }
+
+/* ---------- Thanh tren ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; min-width: 0; }
+
+.brand__mark {
+  width: 38px; height: 38px; flex: none;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: var(--brand); color: var(--btn-ink);
+  font-weight: 800; font-size: 13px; letter-spacing: .3px;
+}
+
+.brand__t { font-weight: 700; font-size: 15px; line-height: 1.25; }
+.brand__s { font-size: 12.5px; color: var(--ink-3); }
+
+.tool {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 38px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg-2); color: var(--ink);
+  font: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--t), background var(--t), transform var(--t);
+}
+.tool:hover { border-color: var(--brand); }
+.tool:active { transform: translateY(1px); }
+.tool--icon { width: 38px; padding: 0; justify-content: center; }
+.tool--on { background: var(--brand); border-color: var(--brand); color: var(--btn-ink); }
+
+/* ---------- Dau trang ---------- */
+
+.hero { padding: 28px 0 8px; }
+
+.hero__kicker {
+  display: inline-block;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--brand-soft); color: var(--brand);
+  font-size: 12.5px; font-weight: 700;
+  letter-spacing: .2px;
+}
+
+.hero h1 { margin: 12px 0 6px; font-size: 30px; line-height: 1.2; letter-spacing: -.4px; }
+.hero p { margin: 0; color: var(--ink-2); font-size: 15px; }
+
+.notice {
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border-left: 4px solid var(--warn);
+  background: var(--warn-soft);
+  color: var(--ink-2);
+  font-size: 14.5px;
+}
+.notice b { color: var(--ink); }
+
+/* ---------- Bang dap an nhanh ---------- */
+
+.card {
+  margin: 22px 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--bg-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__h { margin: 0 0 14px; font-size: 16px; font-weight: 700; }
+
+.keygrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(152px, 1fr));
+  gap: 8px;
+}
+
+.keycell {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--bg-soft);
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color var(--t), transform var(--t);
+}
+.keycell:hover { border-color: var(--brand); transform: translateY(-1px); }
+.keycell__n {
+  flex: none; min-width: 24px; height: 24px;
+  display: grid; place-items: center;
+  border-radius: 8px;
+  background: var(--bg-2); color: var(--ink-3);
+  font-size: 12px; font-weight: 700;
+}
+.keycell__a { font-weight: 700; color: var(--ok); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+body.hide-keys .keycell__a { filter: blur(6px); opacity: .55; }
+body.hide-keys .q__ans-val { filter: blur(7px); }
+body.hide-keys .q__ans-val:hover,
+body.hide-keys .keycell:hover .keycell__a { filter: none; }
+
+/* ---------- Chon passage ---------- */
+
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0 4px; }
+
+.tab {
+  padding: 9px 15px;
+  border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg-2); color: var(--ink-2);
+  font: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--t), color var(--t), background var(--t);
+}
+.tab:hover { border-color: var(--brand); }
+.tab--on { background: var(--brand); border-color: var(--brand); color: var(--btn-ink); }
+
+.psg-title { margin: 22px 0 2px; font-size: 20px; letter-spacing: -.2px; }
+.psg-sub { margin: 0 0 6px; color: var(--ink-3); font-size: 14px; }
+
+/* ---------- The cau hoi ---------- */
+
+.q {
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--bg-2);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  scroll-margin-top: 76px;
+}
+
+.q__head {
+  display: flex; align-items: flex-start; gap: 12px;
+  width: 100%;
+  padding: 15px 17px;
+  border: 0; background: none; color: inherit;
+  font: inherit; text-align: left;
+  cursor: pointer;
+}
+.q__head:hover { background: var(--bg-soft); }
+
+.q__no {
+  flex: none;
+  min-width: 34px; height: 34px; padding: 0 6px;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  background: var(--brand-soft); color: var(--brand);
+  font-size: 14px; font-weight: 800;
+}
+
+.q__mid { flex: 1; min-width: 0; }
+
+.q__tag {
+  display: inline-block;
+  margin-bottom: 4px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--bg-soft); color: var(--ink-3);
+  font-size: 11.5px; font-weight: 700;
+  letter-spacing: .3px; text-transform: uppercase;
+}
+
+.q__text { font-size: 15.5px; font-weight: 600; line-height: 1.55; }
+
+.q__right { flex: none; display: flex; align-items: center; gap: 10px; padding-top: 4px; }
+
+.q__ans-val {
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: var(--ok-soft); color: var(--ok);
+  font-size: 13.5px; font-weight: 800;
+  white-space: nowrap;
+  transition: filter var(--t);
+}
+.q__ans-val--no { background: var(--no-soft); color: var(--no); }
+.q__ans-val--warn { background: var(--warn-soft); color: var(--warn); }
+
+.q__chev { color: var(--ink-3); transition: transform var(--t); font-size: 13px; }
+.q--open .q__chev { transform: rotate(90deg); }
+
+.q__body { display: none; padding: 2px 17px 20px; border-top: 1px solid var(--line); }
+.q--open .q__body { display: block; }
+
+/* ---------- Cac khoi giai thich ---------- */
+
+.blk { margin: 18px 0 0; }
+
+.blk__h {
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 0 7px;
+  font-size: 13px; font-weight: 800;
+  letter-spacing: .4px; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.blk__h::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+.blk p { margin: 0 0 8px; color: var(--ink-2); font-size: 15px; }
+.blk p:last-child { margin-bottom: 0; }
+.blk b, .blk strong { color: var(--ink); }
+
+.kw { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+
+.kw li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.2fr);
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  font-size: 14.5px;
+}
+.kw__from { font-weight: 700; }
+.kw__arr { color: var(--ink-3); font-weight: 700; }
+.kw__to { color: var(--ink-2); font-style: italic; }
+.kw li[data-keep="1"] { background: var(--quote-soft); }
+.kw li[data-keep="1"] .kw__arr { color: var(--quote); }
+
+.quote {
+  margin: 0;
+  padding: 13px 16px;
+  border-left: 4px solid var(--quote);
+  border-radius: 0 12px 12px 0;
+  background: var(--quote-soft);
+  font-size: 15px; line-height: 1.7;
+  color: var(--ink);
+}
+.quote mark {
+  background: var(--mark); color: var(--mark-ink);
+  padding: 1px 3px; border-radius: 4px; font-weight: 700;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.quote__src { display: block; margin-top: 7px; font-size: 12.5px; color: var(--ink-3); font-style: normal; font-weight: 600; }
+
+.verdict {
+  display: flex; align-items: flex-start; gap: 11px;
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--ok-soft);
+}
+.verdict__ic { flex: none; font-size: 17px; line-height: 1.5; }
+.verdict__t { font-size: 15px; color: var(--ink); }
+.verdict__t b { font-weight: 800; }
+
+.trap {
+  margin: 14px 0 0;
+  padding: 13px 16px;
+  border-radius: 14px;
+  border-left: 4px solid var(--no);
+  background: var(--no-soft);
+  font-size: 14.5px; color: var(--ink-2);
+}
+.trap b { color: var(--ink); }
+
+.vocab { display: grid; gap: 7px; }
+.vocab__row {
+  display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 9px; align-items: baseline;
+  padding: 8px 12px; border-radius: 11px; background: var(--bg-soft);
+  font-size: 14.5px;
+}
+.vocab__w { font-weight: 700; }
+.vocab__p { color: var(--ink-3); font-size: 12.5px; font-style: italic; }
+.vocab__m { color: var(--ink-2); }
+
+.alt { margin: 12px 0 0; font-size: 14.5px; color: var(--ink-2); }
+.alt b { color: var(--ink); }
+
+.empty { padding: 44px 20px; text-align: center; color: var(--ink-3); }
+
+@media (max-width: 620px) {
+  .hero h1 { font-size: 24px; }
+  .kw li, .vocab__row { grid-template-columns: 1fr; gap: 3px; }
+  .kw__arr { display: none; }
+  .q__right { flex-direction: column; align-items: flex-end; gap: 5px; }
+}
+
+@media print {
+  .topbar, .tabs, .notice, .q__chev { display: none !important; }
+  .q__body { display: block !important; }
+  .q, .card { break-inside: avoid; box-shadow: none; }
+  body { background: #fff; }
+}

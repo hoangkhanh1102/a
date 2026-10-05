@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chữa đề Cambridge Reading</title>
+<meta name="description" content="Bài chữa chi tiết các đề Cambridge IELTS Reading: hiểu câu hỏi, tìm từ khóa paraphrase, đối chiếu với bài đọc và tránh bẫy.">
+<meta name="theme-color" content="#f6f7fb">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/reading.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand__mark">READ</div>
+    <div class="brand__txt">
+      <div class="brand__t" id="deTen">Chữa đề Reading</div>
+      <div class="brand__s" id="deNguon"></div>
+    </div>
+  </div>
+
+  <button class="tool" id="keysBtn" type="button">🙈 Ẩn đáp án</button>
+  <button class="tool" id="openBtn" type="button">⌄ Mở tất cả</button>
+  <button class="tool tool--icon" id="printBtn" type="button" title="In hoặc lưu PDF">🖨</button>
+  <button class="tool tool--icon" id="themeBtn" type="button" title="Đổi nền sáng tối">🌙</button>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="hero__kicker">Cambridge IELTS Reading</span>
+    <h1>Chữa đề chi tiết</h1>
+    <p>Mỗi câu được mổ xẻ theo đúng thứ tự mà bạn nên làm trong phòng thi: hiểu đề nói gì, tìm từ khóa đã bị diễn đạt lại, định vị câu quyết định trong bài, rồi mới chốt đáp án.</p>
+    <div class="notice" id="note"></div>
+  </section>
+
+  <section class="card">
+    <h2 class="card__h">Bảng đáp án nhanh</h2>
+    <div class="keygrid" id="keyGrid"></div>
+  </section>
+
+  <nav class="tabs" id="tabs"></nav>
+
+  <main id="deck"></main>
+
+</div>
+
+<script src="data/cam21-test1.js"></script>
+<script src="assets/reading.js"></script>
+</body>
+</html>

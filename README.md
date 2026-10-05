@@ -29,6 +29,15 @@ Rồi mở `http://localhost:8080`. Lần đầu bấm ghi âm, trình duyệt s
 
 Đưa lên GitHub Pages: vào Settings → Pages, chọn nhánh chứa mã nguồn và thư mục gốc `/`. Trang sẽ chạy ngay vì không cần bước build nào.
 
+## Chữa đề Cambridge Reading
+
+Thư mục `reading/` chứa bài chữa chi tiết đề Cambridge IELTS Reading, viết một lần và xuất ra hai dạng:
+
+- `Cambridge-21-Reading-Test-1-giai-thich.docx`: file Word giải thích đủ 40 câu của Cambridge IELTS 21, Reading Test 1, để in hoặc gửi cho học viên
+- `reading/index.html`: bản web cùng nội dung, có nút ẩn đáp án để học viên tự làm trước, bảng đáp án nhanh và chế độ nền tối
+
+Nội dung gốc nằm ở `reading/word/p1.js`, `p2.js`, `p3.js`. Sau khi sửa, chạy `node reading/word/tao-word.js` và `node reading/word/tao-data-web.js` để tạo lại hai bản. Chi tiết xem `reading/HUONG-DAN.md`.
+
 ## Giáo án
 
 Thư mục `giao-an/` có sẵn kịch bản dạy cho buổi 120 phút:
